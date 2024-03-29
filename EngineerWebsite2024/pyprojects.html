@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toolkit Engineering!</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Additional inline styles */
+      /* CSS styles for the profile picture */
+      .profile-picture,
+      .top-left {
+        position: absolute; /* Change from fixed to absolute */
+        top: 20px; /* Adjust the top position as needed */
+        left: 20px; /* Adjust the left position as needed */
+        z-index: 1; /* Ensure the profile picture stays behind other content */
+      }
+
+      /* CSS styles for the title box */
+      .title-box {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50%; /* Adjust the width as needed */
+        height: 100vh; /* Set the height to cover the entire viewport */
+        background-color: white; /* Set the background color to white */
+        padding: 20px; /* Adjust padding as needed */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        z-index: 2; /* Ensure the title box stays above other content */
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: auto;
+        z-index: 5;
+      }
+    </style>
+  </head>
+    <header>
+      <h1 class="top-left">Toolkit Engineering!</h1>
+      <nav class="navbar">
+        <div class="nav-links">
+          <h1>All things innovation</h1>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li>
+              <a href="https://www.linkedin.com/in/anthony-carthen-886b06162">
+                LinkedIn</a
+              >
+            </li>
+
+          </ul>
+        </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+    </header>
+    <body>
+      <div>
+          <h1>Embedded Python Content</h1>
+          <p>{{ content }}</p>
+      </div>
+  
+    <main>
+      <div class="Etext-box">
+        <h2>Electrical & Computer Engineer</h2>
+      </div>
+      <div class="button-container">      
+          <a href="projects.html" class="Projectsbtn">Go to Projects</a>
+     </div>
+    </main>
+  </body>
+  
+    <footer>
+      <p class="bottom-quote">
+        See the difference, get creative. If you can think it, Toolkit can
+        design it!
+      </p>
+    </div>
+  
+  </footer>
+</html>

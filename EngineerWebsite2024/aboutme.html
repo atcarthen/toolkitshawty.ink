@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toolkit Engineering!</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Additional inline styles */
+      /* CSS styles for the profile picture */
+      .profile-picture,
+      .top-left {
+        position: absolute; /* Change from fixed to absolute */
+        top: 20px; /* Adjust the top position as needed */
+        left: 20px; /* Adjust the left position as needed */
+        z-index: 1; /* Ensure the profile picture stays behind other content */
+      }
+
+      /* CSS styles for the title box */
+      .title-box {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50%; /* Adjust the width as needed */
+        height: 100vh; /* Set the height to cover the entire viewport */
+        background-color: white; /* Set the background color to white */
+        padding: 20px; /* Adjust padding as needed */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        z-index: 2; /* Ensure the title box stays above other content */
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: auto;
+        z-index: 5;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="Etext-box">About Me!</h1>
+
+      <!-- Profile picture -->
+      <img
+        class="profile-picture"
+        src="WebsiteImages/aboutMe.JPEG"
+        alt="Profile"
+      />
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="nav-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li>
+              <a href="https://www.linkedin.com/in/anthony-carthen-886b06162">
+                LinkedIn</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="content">
+      <p>
+        I spend countless hours of research, implementing & developing
+        technologies on wide range of topics. I create solutions to sending and
+        receiving electronic signals. <br />Creating this website, this is just
+        one of the many skillsets I have uncovered. In 2024 I too, am one of the
+        many who stand ready to take on the challenges of tomorrow, presenting
+        new ideas. I possess the same meticulous work ethic that has advanced us
+        this far. I have every intention to serve the public to the highest
+        standard for consumption. I aim to educate and explore my constituency
+        to find ways to consistently educate themselves, as we are life long
+        learners. Ultimately, you can do anything you put your mind to! I train
+        on my personal time on topics that include:
+      </p>
+      <br />
+      <ul>
+        <li><a href="ultrasoundproject.html">Electric Schematic Design</a></li>
+        <li>Hardware & Software/Application Design</li>
+        <li>
+          <a href="gpsbuoy.html">Integration of Electrical Systems</a>
+        </li>
+        <li>Renewable Energy</li>
+        <li>Power Distribution</li>
+        <li>Electrical Circuit Analysis</li>
+        <li>Integrated circuits</li>
+        <li>Embedded Systems</li>
+        <li>
+          <a href="pyprojects.html">Automation in code using Python 3.11</a>
+        </li>
+        <li>Web development</li>
+        <li>Networking & CyberSecurity</li>
+      </ul>
+      <br />
+      <p>
+        As an engineer, I investigate new and old technologies that engage in
+        the advancement of human civilization. Technologies I engage with, I
+        want to simplify while implementing, conversely optimizing my own life
+        to promote easy decision making.
+      </p>
+      <br />
+      <p>
+        In my free time, you will find me coding applications to condense my
+        life, or working on Hack The Box tutorials using my Parrot 5.3 Linux OS
+        to explore. Outside of the house I get involved in University
+        engineering initiatives with students to affect our countries best and
+        brightest. Engaging with college/high school students, helps me directly
+        get involved in how diverse solutions can be, making possiblity a
+        reality!
+        <br />
+        Click the button! See where it takes you. Happy learning!
+      </p>
+    </main>
+
+    <!-- Button to project.html -->
+    <a href="career.html" class="Projectsbtn">See Professional Profile></a>
+    <div>
+      <p class="bottom-quote">All Things Enineering!</p>
+    </div>
+  </body>
+
+  <footer></footer>
+</html>

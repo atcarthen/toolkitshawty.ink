@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toolkit Engineering!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    /* Additional inline styles */
+    /* CSS styles for the profile picture */
+    .profile-picture,
+    .top-left {
+      position: absolute; /* Change from fixed to absolute */
+      top: 20px; /* Adjust the top position as needed */
+      left: 20px; /* Adjust the left position as needed */
+      z-index: 1; /* Ensure the profile picture stays behind other content */
+    }
+
+    /* CSS styles for the title box */
+    .title-box {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50%; /* Adjust the width as needed */
+      height: 100vh; /* Set the height to cover the entire viewport */
+      background-color: white; /* Set the background color to white */
+      padding: 20px; /* Adjust padding as needed */
+      box-sizing: border-box; /* Include padding and border in the element's total width and height */
+      z-index: 2; /* Ensure the title box stays above other content */
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: auto;
+      z-index: 5;
+    }
+  </style>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="career.html">Career</a></li>
+          </ul>
+        </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+      </nav>
+    </header>
+    <!-- Profile picture
+    <img
+      class="profile-picture"
+      src="WebsiteImages/aboutMe.JPEG"
+      alt="Profile"
+    />
+     -->
+    <div class="Etext-box">
+      <h2>Electrical & Computer Engineer</h2>
+    </div>
+
+    <main class="content-greeting">
+      <p>
+        Greetings, My name is Anthony and welcome to my corner of the internet!
+        I have a background in Electrical & Computer Engineering from North
+        Carolina Agricultural & Technical State University (2020). <br />
+        <br />
+        If I could time travel to let my self in on what I am, and am planning
+        on today, I would tell you, "you're crazy!", its been an interesting
+        journey to be what I am today. <br /><br />
+        I have interest & expertise any all electronic devices that transmit and
+        recieve signals. I ensure communications from the circuit bit level, to
+        large networks of databases and computers. A lot of the times I engage
+        in high level process where we decompose and analyze the most neccesary
+        steps to make room for others, while also considering redundancy and
+        failures over time. <br />
+        All in all, a complicated way to tell you, I like to solve problems!
+        <br />
+        <br />
+        Enjoy your cruise through my experiences, which I hope motivate you to
+        think big, and think of possibilities.
+      </p>
+      <br />
+      <p>Click below & see the journey!</p>
+    </main>
+    <div class="button-container">
+      <a href="projects.html" class="Projectsbtn"> View Projects</a>
+    </div>
+
+    <footer>
+      <p class="bottom-quote">All Things Enineering!</p>
+    </footer>
+
+    <!-- Javascript for toggle Menu ---------->
+    <script src="script.js"></script>
+  </body>
+</html>

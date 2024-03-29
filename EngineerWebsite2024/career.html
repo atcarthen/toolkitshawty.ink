@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toolkit Engineering!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    /* Additional inline styles */
+    /* CSS styles for the profile picture */
+    .profile-picture,
+    .top-left {
+      position: absolute; /* Change from fixed to absolute */
+      top: 20px; /* Adjust the top position as needed */
+      left: 20px; /* Adjust the left position as needed */
+      z-index: 1; /* Ensure the profile picture stays behind other content */
+    }
+
+    /* CSS styles for the title box */
+    .title-box {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50%; /* Adjust the width as needed */
+      height: 100vh; /* Set the height to cover the entire viewport */
+      background-color: white; /* Set the background color to white */
+      padding: 20px; /* Adjust padding as needed */
+      box-sizing: border-box; /* Include padding and border in the element's total width and height */
+      z-index: 2; /* Ensure the title box stays above other content */
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: auto;
+      z-index: 5;
+    }
+  </style>
+  <body>
+    <header>
+      <h1 class="top-left">Toolkit Enineering!</h1>
+      <img
+        class="profile-picture"
+        src="WebsiteImages/aboutMe.JPEG"
+        alt="Profile"
+      />
+
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="nav-links">
+          <h2>All Things Innovation for Automation</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li>
+              <a href="https://www.linkedin.com/in/anthony-carthen-886b06162">
+                LinkedIn</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="Etext-box">Professional Experience</div>
+
+    <main class="content">
+      <section class="introduction">
+        <p>
+          Here you will find my professional experience up to this point. Every
+          element here is meant to be interative! Learn up!
+        </p>
+      </section>
+      <div class="pdf-container">
+        <embed
+          src="WebsiteImages/EngineeringProjects/WebProfileEECE3152024.pdf"
+          type="application/pdf"
+          width="100%"
+          height="600px"
+        />
+      </div>
+    </main>
+    <section>
+      <nav>
+        <a href="projects.html" class="Projectsbtn"
+          >Go to Engineering Projects</a
+        >
+      </nav>
+    </section>
+    <section>
+      <p class="bottom-quote">
+        "In the midst of chaos, there is also opportunity" - Sun Tzu<br />
+      </p>
+    </section>
+    <footer></footer>
+  </body>
+</html>

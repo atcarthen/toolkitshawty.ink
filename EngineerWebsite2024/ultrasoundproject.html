@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toolkit Engineering!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h2 class="top-left">Toolkit Engineering!</h2>
+      <nav class="navbar">
+        <div class="nav-links">
+          <h1>All things innovation</h1>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="career.html">Career</a></li>
+          </ul>
+        </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+      </nav>
+    </header>
+    <main class="content">
+      /*object will embed video elements*/
+      <object
+        data="WebsiteImages/EngineeringProjects/DesignProjectPosterAC.pdf"
+        type="application/pdf"
+        class="dsgnposter"
+        width="100%"
+        height="500px"
+      ></object>
+      <br />
+      <object
+        data="WebsiteImages/EngineeringProjects/TxRxCodeHC05MSP430.pdf"
+        type="application/pdf"
+        class="engineeringdoc"
+        width="100%"
+        height="500px"
+      ></object>
+      <br />
+      <div class="pdf-container">
+        <object
+          data="WebsiteImages/EngineeringProjects/Sr. Design Milk.pdf"
+          type="application/pdf"
+          class="pptx"
+          width="100%"
+          height="500px"
+        ></object>
+      </div>
+      <br />
+      <video class="demovid" controls width="100%" height="auto">
+        /*embed video element*/
+        <source
+          src="WebsiteImages/EngineeringProjects/DEMO II.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <br />
+    </main>
+    <footer>
+      <div>
+        <nav>
+          <a href="pyprojects.html" class="Projectbtn"
+            >Go to .Py Applications</a
+          >
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
