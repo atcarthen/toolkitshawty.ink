@@ -1,13 +1,24 @@
+/* Reset margin, padding, and font */
 * {
   margin: 0;
   padding: 0;
-  font-family:'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  margin: 0;
+  background-color: white; /* Ensure the body has a background color */
 }
 
 .main {
-  flex-grow: 1; /* Allow the main content to grow to fill available space */
+  flex-grow: 1;
   margin-top: 200px;
 }
+
 body::after {
   content: "";
   position: fixed;
@@ -19,20 +30,27 @@ body::after {
   background-position: center;
   background-attachment: fixed;
   background-image: url("WebsiteImages/EngineeringProjects/McNair.jpg");
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  z-index: -1; /* Ensure it's behind other content */
+  overflow-x: hidden;
+  z-index: -1;
 }
-.content-wrapper {
-  margin-top: 200px; /* Adjust this value as needed to push content down */
+.center.quote {
+  display: flex;
+  justify-content: center; /* Horizontally centers the content */
+  align-items: center; /* Vertically centers the content */
+  height: 100vh; /* Make sure the container takes the full height of the viewport */
+  text-align: center; /* Ensure the text inside is also centered */
+  font-size: 2rem; /* Adjust the font size if necessary */
+  font-family: 'Times New Roman', Times, serif; /* Optional: Set font family */
+  color: #333; /* Set the text color */
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: Transparent background for better readability */
+  border-radius: 10px; /* Optional: Rounded corners for the box */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adding a subtle shadow */
+  padding: 20px; /* Padding around the text */
 }
 
-.body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  justify-content: space-between;
-  margin: 0;
-  flex-grow: 1;
+
+.content-wrapper {
+  margin-top: 200px; /* Adjusted for correct spacing */
 }
 
 .bottom-quote {
@@ -40,11 +58,11 @@ body::after {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: auto;
   text-align: center;
   background-color: #f2f2f2;
   padding: 20px;
   z-index: 10;
+  animation: slideInFromLeft 1s ease-in-out forwards;
 }
 
 @keyframes slideInFromLeft {
@@ -57,10 +75,6 @@ body::after {
   100% {
     left: 50%;
   }
-}
-
-.bottom-quote {
-  animation: slideInFromLeft 1s ease-in-out forwards;
 }
 
 .Etext-box {
@@ -80,74 +94,108 @@ body::after {
   height: 50px;
   line-height: 50px;
   text-align: center;
-  padding: 10px 20px;
   background-color: #1860dcb5;
   color: #c0de28;
   text-decoration: none;
   border: 2px solid #c4ff01f6;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 10;
   transition: all 0.6s ease-in-out;
 }
 
-.Projectbtn,
-.gpsbouybtn,
-.pythonprojectsbtn,
-.ultrasoundprojectbtn {
-  display: inline-block;
-  width: 30%;
-  padding: 5px;
-  background-color: #6a0b7bdd;
-  color: #97f9f1;
-  text-decoration: none;
-  border-radius: 6px;
-  border: 5px solid #effa19f9;
-  transition: all 0.8s ease-in-out;
-  text-align: center;
-}
-
-.Projectsbtn:hover {
+.Projectbtn:hover {
   border: 1px solid navy;
   background: #d9dc2f8e;
 }
 
-.gpsbouybtn,
-.pythonprojectsbtn,
-.ultrasoundprojectbtn {
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links ul li {
   margin-left: 10px;
 }
 
-.gpsbouybtn:hover {
-  background-color: #0c1d6f;
-  color: #8bb039;
+.nav-links ul li a {
+  color: rgb(8, 69, 60);
+  text-decoration: none;
+  font-size: 13px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-.Projectbtn:hover {
-  background-color: #0a1801;
-  color: #16047b;
+.navbar .close-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  z-index: 3;
 }
 
-.pythonprojectsbtn:hover {
-  background-color: #b4069c;
-  color: #00ff5e;
-}
+/* Mobile-specific styles */
+@media screen and (max-width: 700px) {
 
-.ultrasoundprojectbtn:hover {
-  background-color: #0a1801;
-  color: #04945f;
-}
+  .nav-links {
+    position: fixed;
+    background: #b715dc;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -200px; /* Off-screen */
+    z-index: 2;
+    transition: right 0.5s ease-in-out;
+  }
 
-.bottom-quote {
-  position: fixed;
-  bottom: 0; /* Change to a lower value, like 20px, to give space for scrolling */
-  left: 50%;
-  transform: translateX(-50%);
-  width: auto;
-  text-align: center;
-  background-color: #f2f2f2;
-  padding: 20px;
-  z-index: 10;
+  .nav-links.open {
+    right: 0; /* Slide in */
+  }
+
+  .nav-links ul {
+    padding: 50px;
+  }
+
+  .nav-links ul li a {
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  .navbar .close-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    z-index: 3;
+  }
+
+  .navbar {
+    position: relative;
+  }
+  .button-container a {
+    width: 100%; /* Stack buttons on top of each other for very small screens */
+  }
+}
+@media screen and (max-width: 768px) {
+  .button-container a {
+    width: 48%; /* Adjust the width for smaller screens, 2 per row */
+  }
 }
 
 .profile-picture {
@@ -181,200 +229,103 @@ body::after {
   color: black;
 }
 
-.background {
-  background-image: url("WebsiteImages/EngineeringProjects/McNair.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.header {
-  text-align: center;
-  position: fixed;
-  top: 20px;
-  width: 100%;
-  z-index: 10;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 24px;
-}
-
-.content-wrapper,
-.content {
-  background-color: rgba(255, 255, 255, 0.654);
-  padding: 20px;
-  font-size: 10pt;
-  margin-top: calc(33vh);
-  overflow-y: scroll;
-}
-
 .content-greeting {
   background-color: #ffffff;
-  padding: 20px; /* Add padding for spacing */
-  border: 2px solid #000000; /* Black border to resemble paper edges */
+  padding: 20px;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+.content {
+  background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
+  padding: 20px; /* Add padding around the content */
+  font-size: 10pt;
+  margin-top: calc(33vh); /* You can adjust this based on your layout */
+  overflow-y: auto; /* Allow scrolling if the content exceeds the available height */
+  border-radius: 10px; /* Optional: rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: add some shadow for depth */
+}
+
+/* Optional: If you want text to be more readable against the background */
+.content p {
+  color: #333; /* Dark text for readability */
+  line-height: 1.6;
+}
+
+/* For making sure the text is readable in any context */
+.content h1, .content h2, .content h3 {
+  color: #222; /* Adjust heading colors */
+}
+.content.options {
+  display: flex; /* Use Flexbox to arrange the buttons */
+  justify-content: space-around; /* Distribute the buttons evenly with space between them */
+  padding: 20px; /* Padding around the content */
+  margin-top: 20px; /* Optional margin to separate the section from the top */
+  width: 100%; /* Ensure it takes up full width */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around; /* Space out buttons horizontally */
+  width: 100%; /* Ensure full width for spacing */
+  flex-wrap: nowrap; /* Allow wrapping to the next row if necessary */
+}
+
+.button-container a {
+  display: block; /* Make the buttons block elements to control width */
+  width: 30%; /* Adjust the width of each button */
+  padding: 15px; /* Add padding inside each button */
+  background-color: rgba(56, 109, 80, 0.377); /* Light background for each button */
+  color: #fff; /* White text color */
+  text-decoration: none; /* Remove underline */
+  text-align: center; /* Center the text inside */
+  border: 2px solid #ccc; /* Border around each button */
   border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-  font-family: Arial, sans-serif; /* Choose appropriate font */
-  font-size: 12px; /* Adjust font size as needed */
-  line-height: 1.5; /* Adjust line height for readability */
-  width: 80%; /* Set width to 80% of the container */
-  max-width: 800px; /* Maximum width to prevent stretching on larger screens */
-  margin: 20px auto; /* Center the content horizontally and add margin */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
 }
 
+.button-container a:hover {
+  background-color: #1860dcb5; /* Background color change on hover */
+  transform: scale(1.05); /* Slight scale up effect on hover */
+}
 .image-caption {
-  position: absolute; /* Position the caption relative to its container */
-  top: 50%; /* Position the caption vertically centered */
-  left: 50%; /* Position the caption horizontally centered */
-  transform: translate(-50%, -50%); /* Center the caption precisely */
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-  color: white; /* Text color */
-  padding: 10px; /* Add padding for spacing */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow */
-  font-family: "Times New Roman", Times, serif; /* Newspaper-style font */
-  font-size: 16px; /* Font size */
-  opacity: 0; /* Initially hide the caption */
-  transition: opacity 0.3s; /* Add a transition for smooth appearance */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
-/* Show the caption on hover */
 .image-container:hover .image-caption {
   opacity: 1;
 }
 
+/* Top-left element styles */
 .top-left {
-  font-weight: bold; /* Make the text bold */
-  position: fixed; /* Fix the element to the viewport */
-  left: 20px; /* Position it to the left side of the viewport */
-  top: 20px; /* Adjust as needed for vertical positioning */
+  font-weight: bold;
+  position: fixed;
+  left: 20px;
+  top: 20px;
   z-index: 3;
   color: #cbf415;
 }
 
-.navbar {
-  display: flex; /* Align items within the navbar to the right */
-  justify-content: flex-end; /* Align items with space between */
-  padding: 10px;
-  position: fixed; /* Position the navbar fixed to the top */
-  top: 0; /* Position it at the top of the viewport */
-  right: 0; /* Fix the navbar to the right side of the viewport */
-  width: auto; /* Ensure it spans the entire width */
-  background-color: white; /* Set the background color */
-  z-index: 999; /* Ensure it's above other content */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-}
-
-.nav-links ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  text-align: right;
-}
-
-.nav-links ul li {
-  display: inline-block;
-  margin-left: 10px;
-}
-
-.nav-links ul li a {
-  margin-left: 10px;
-  color: rgb(8, 69, 60);
-  text-decoration: none;
-  font-size: 13px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-}
-
-.nav-links ul li:first-child {
-  margin-left: 0; /*removes margin for first item*/
-}
-
-.nav-links ul li::after {
-  content: "";
-  width: 0%;
-  height: 2px;
-  background: #35385ada;
-  display: block;
-  margin: auto;
-  transition: 0.5s;
-}
-
-.nav-links ul li:hover::after {
-  width: 100%;
-}
-
-.Projectbtn {
-  position: relative; /* Position relative to its normal position */
-  display: block; /* Change to block element for centering */
-  margin: 20px auto; /* Center horizontally and add margin for spacing */
-  width: 200px; /* Adjust the width as needed */
-  height: 50px; /* Adjust the height as needed */
-  line-height: 50px; /* Center the text vertically */
-  text-align: center; /* Center the text horizontally */
-  padding: 10px 20px; /* Adjust padding for better appearance */
-  background-color: #dc6618b5; /* Button background color */
-  color: #134eac; /* Button text color */
-  text-decoration: none; /* Remove default underline */
-  border: none;
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-  transition: all 0.3s ease-in-out;
-}
-
-.Projectbtn:hover {
-  border: 1px solid navy;
-  background: #d9dc2f8e;
-  transition: 0.5s;
-}
-
-@media screen and (max-width: 700px) {
-  .text-box h1 {
-    display: block;
-  }
-  .nav-links ul li a {
-    display: block;
-  }
-  .about-header {
-    font-size: 14px;
-    padding: 15px;
-  }
-  .nav-links {
-    position: absolute;
-    background: #b715dc;
-    height: 100vh;
-    width: 200px;
-    top: 0;
-    right: 0;
-    text-align: left;
-    z-index: 2;
-    transition: 1s;
-  }
-  nav .fa {
-    display: block;
-    color: bisque;
-    margin: 10px;
-    font-size: 22px;
-    cursor: pointer;
-  }
-  .nav-links ul {
-    padding: 50px;
-  }
-  .nav-links ul li a {
-    font-family: "Times New Roman", Times, serif; /* Change font for smaller screens */
-  }
-}
-
-/*--------Toolkit code, solutions, AboutMe*/
-
+/* Toolkit, About Me Section */
 .tattoo {
   width: 80%;
   margin: auto;
